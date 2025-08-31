@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Embed a Video - Tutorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff5f9;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff9dc8 0%, #ffc2dd 100%);
+            color: #7a2c51;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #7a2c51;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            border-left: 5px solid #ff9dc8;
+        }
+        
+        .intro p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #ffc2dd;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-header {
+            background: linear-gradient(135deg, #ffc2dd 0%, #ffd8e8 100%);
+            color: #7a2c51;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            background-color: white;
+            color: #ff6bac;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            box-shadow: 0 2px 8px rgba(255, 108, 172, 0.3);
+        }
+        
+        .step-content {
+            padding: 25px;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 15px;
+            color: #ff6bac;
+        }
+        
+        .screenshot {
+            text-align: center;
+            margin: 20px 0;
+            border: 1px solid #ffe5f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fffaff;
+        }
+        
+        .screenshot img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        .caption {
+            font-style: italic;
+            color: #cc7ea9;
+            font-size: 0.9rem;
+            padding: 10px;
+            background-color: #fffaff;
+        }
+        
+        .example {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+            border-left: 5px solid #ff9dc8;
+        }
+        
+        .example h2 {
+            color: #ff6bac;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #ffd8e8;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #cc7ea9;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background-color: #fffaff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #ffd8e8;
+            color: #d64d94;
+        }
+        
+        @media (max-width: 768px) {
+            .steps-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>How to Embed a Video on Your Website</h1>
+            <p class="subtitle">A step-by-step tutorial with screenshots to help you easily add videos to your web pages</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Why Embed Videos?</h2>
+            <p>Embedding videos on your website can increase engagement, improve SEO, and make your content more dynamic. Most video hosting services like YouTube, Vimeo, and Dailymotion provide easy ways to embed their content on your site.</p>
+            <p>In this tutorial, we'll focus on embedding YouTube videos, which is one of the most popular video platforms.</p>
+        </section>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2>Find the Video</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Navigate to the video you want to embed</h3>
+                    <p>Go to YouTube and find the video you'd like to embed on your website. Make sure the video has embedding allowed (most do).</p>
+                    <div class="screenshot">
+                        <img src="Homepage.png" alt="YouTube homepage screenshot">
+                        <div class="caption">YouTube homepage - find your video</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2>Click Share</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Locate and click the Share button</h3>
+                    <p>Below the video player, you'll see a Share button. Click on it to reveal the sharing options.</p>
+                    <div class="screenshot">
+                        <img src="Share-button.png" alt="YouTube share button screenshot">
+                        <div class="caption">Click the Share button below the video</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h2>Select Embed</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Choose the Embed option from the menu</h3>
+                    <p>From the sharing options that appear, select "Embed" to generate the embed code for the video.</p>
+                    <div class="screenshot">
+                        <img src="Embed-option.png" alt="YouTube embed option screenshot">
+                        <div class="caption">Select the Embed option from the menu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h2>Copy the Code</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Copy the provided embed code</h3>
+                    <p>YouTube will generate an HTML iframe code for embedding the video. You can customize the player options if needed, then click "Copy" to copy the code to your clipboard.</p>
+                    <div class="screenshot">
+                        <img src="Copy-code.png" alt="YouTube embed code screenshot">
+                        <div class="caption">Copy the generated embed code</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <h2>Paste in HTML</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Paste the code into your website's HTML</h3>
+                    <p>Paste the copied code into your website's HTML file where you want the video to appear. The code will look something like this:</p>
+                    <pre>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</pre>
+                    <div class="screenshot">
+                        <img src="CSS-style.png" alt="HTML code screenshot">
+                        <div class="caption">Paste the code in your HTML file</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">6</div>
+                    <h2>Adjust & Style</h2>
+                </div>
+                <div class="step-content">
+                    <h3>Adjust size and add styling if needed</h3>
+                    <p>You can modify the width and height attributes of the iframe, or use CSS to make it responsive so it looks good on all devices.</p>
+                    <div class="screenshot">
+                        <img src="https://assets.website-files.com/5e1c4fb46b7a7c24c0d7b8a9/5e5f7b1f6a38efc8ad6787f2_YouTube-Embed-Option.png" alt="CSS styling screenshot">
+                        <div class="caption">Use CSS to style the video container</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="example">
+            <h2>Example Embedded Video</h2>
+            <p>Here's the final result - a YouTube video successfully embedded in a web page using the steps outlined above:</p>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/f2Cun2Zs_Xc?si=xzV1LWrQhbsmanXl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+        </body>
+</html>
